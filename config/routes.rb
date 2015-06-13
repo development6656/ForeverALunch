@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # root 'welcome#index'
   root 'session#new'
+  get 'sfo/terminals' => 'terminals#index'
+  get 'sfo/terminals/:id' => 'terminals#view'
 
 
   # root 'connection#index'
