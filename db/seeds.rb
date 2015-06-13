@@ -19,8 +19,21 @@ response.each do |place|
   restaurant.name = place['node_title']
   restaurant.description = place['body']
   restaurant.location_summary = place['location_summary']
-  restaurant.start_time = place['hours'][0..25].match(/..:...a.m/)
-  restaurant.end_time = place['hours'].match(/..:...p.m/)
+  if place['hours'][0..25] == "24 hours-a-day"
+    restaurant.start_time  = DateTime.parse("00:00")
+    restaurant.end_time = DateTime.parse("24:00")
+  elsif place['hours'].scan(/..:...p.m/).empty?
+    restaurant.start_time = DateTime.parse(place['hours'][0..25].scan(/..:...a.m/)[0].strip)
+    restaurant.end_time = DateTime.parse("24:00")
+  elsif place['hours'][0..25] == nil
+    next
+  elsif place['hours'][0..25].scan(/..:...a.m/).empty?
+    restaurant.start_time = DateTime.parse("04:30")
+    restaurant.end_time = DateTime.parse(place['hours'].scan(/..:...p.m/)[0].strip)
+  else
+    restaurant.start_time = DateTime.parse(place['hours'][0..25].scan(/..:...a.m/)[0].strip)
+    restaurant.end_time = DateTime.parse(place['hours'].scan(/..:...p.m/)[0].strip)
+  end
   restaurant.image = place['image']
   restaurant.security = false if place['security'] == "Pre-Security"
   Terminal.where(name: place['terminal']).first.businesses << restaurant
