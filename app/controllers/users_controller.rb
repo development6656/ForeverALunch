@@ -29,8 +29,8 @@ class UsersController < ApplicationController
         end_time: DateTime.parse(params[:end_time])
       )
     appointment.save!
-
-    render json: appointment.to_json
+    p user = current_user
+    render json: current_user.to_json
   end
 end
 
