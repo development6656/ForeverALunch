@@ -1,29 +1,35 @@
 <div class="total-page-container">
-  <div>
-    <h1 class='t-center f-oldstd'>SIGN UP</h1>
-    <%= form_for @user do |f| %>
-    <div class="w-90 center">
-      <% if @error %>
-        <%= @error %>
-      <% end %>
-      <div><p class='taken'><%= @user.errors.full_messages.find{|message| message.include?('taken')} %></div>
-
-      <div class="p-t-sm"><%= f.label :username, class: "f-oswald fz-xs f-weight" %></div>
-      <div><%= f.text_field :username, required: true, title: "Please Enter Your Username", :class => 'rounded w-full' %></div>
-
-      <div class="p-t-sm"><%= f.label :email, class: "f-oswald fz-xs f-weight" %></div>
-      <div>
-        <%= f.text_field :email, required: true, pattern: '[^@]+@[^@]+\.[a-zA-Z]{2,6}', title: "E.g john123@gmail.com", :class => 'rounded w-full' %></div>
-
-
-      <div class="p-t-sm"><%= f.label :password, class: "f-oswald fz-xs f-weight" %></div>
-      <div><%= f.password_field :password, required: true, pattern: '.{6,}', title: "6 characters minimum", :class => 'rounded w-full' %></div>
-
-      <div class="p-t-sm"><%= f.label :password_confirmation, class: "f-oswald fz-xs f-weight" %></div>
-      <div><%= f.password_field :password_confirmation, :class => 'rounded w-full' %></div>
+  <div class="bgc-grey">
+    <div class="bgc-darkgrey">
+      <h1 class="t-center f-oswald p-xs">LayoverConnect</h1>
     </div>
-      <div class='p-sm t-center'><%= f.submit "Sign Up", class: "f-oswald sm-rect-button-map" %></div>
+    <div class="m-w-500 center">
+      <h1 class='p-t-m fz-xs t-center f-futura'>SIGN UP</h1>
+      <%= form_for @user do |f| %>
+      <div class="w-90 center">
+        <% if @error %>
+          <div class="t-center"><%= @error %></div>
+        <% end %>
+        <div><p class='taken'><%= @user.errors.full_messages.find{|message| message.include?('taken')} %></p></div>
 
-    <% end %>
+        <div><%= f.label :username, class: "f-oswald fz-xs f-weight" %></div>
+        <div><%= f.text_field :username, required: true, title: "Please Enter Your Username", :class => 'rounded w-full' %></div>
+
+        <div class="p-t-sm"><%= f.label :email, class: "f-oswald fz-xs f-weight" %></div>
+        <div>
+          <%= f.text_field :email, required: true, pattern: '[^@]+@[^@]+\.[a-zA-Z]{2,6}', title: "E.g john123@gmail.com", :class => 'rounded w-full' %></div>
+
+
+        <div class="p-t-sm"><%= f.label :password, class: "f-oswald fz-xs f-weight" %></div>
+        <div><%= f.password_field :password, required: true, pattern: '.{6,}', title: "6 characters minimum", :class => 'rounded w-full' %></div>
+
+        <div class="p-t-sm"><%= f.label :password_confirmation, class: "f-oswald fz-xs f-weight" %></div>
+        <div><%= f.password_field :password_confirmation, :class => 'rounded w-full' %></div>
+      </div>
+        <div class='p-t-sm p-sm t-center'><%= f.submit "SIGN UP", class: "f-oswald sm-rect-button" %>
+        </div>
+      <% end %>
+    </div>
+    <%= image_tag('clouds.png', :class => "v-bottom w-full")%>
   </div>
 </div>
