@@ -1,0 +1,93 @@
+/* Width */
+
+.w-90 {width: 90%;}
+.w-full {width: 100%;}
+
+.w-68 {width: 68px;}
+.w-220 {width: 220px;}
+
+.m-w-500 {max-width: 500px;}
+
+/* Height */
+
+.h-60 {height: 60px;}
+
+/* Background */
+
+.bgc-grey {background-color: #F8F8F8;}
+.bgc-darkgrey {background-color: #F1F1F1;}
+.bgc-white {background-color: white}
+
+/* Color */
+
+/* Fonts */
+
+.fz-xs {font-size: 1.15em;}
+
+.f-oswald {font-family: 'Oswald', sans-serif;}
+.f-oldstd {font-family: 'Old Standard TT', serif;}
+.f-futura {font-family: Futura, 'Trebuchet MS', Arial, sans-serif}
+/* Borders */
+
+/* Positioning */
+
+.t-center {text-align: center;}
+.t-right {text-align: right;}
+.t-left {text-align: left;}
+
+.center {margin: 0 auto;}
+
+.v-top {vertical-align: top;}
+.v-bottom {vertical-align: bottom;}
+
+
+.d-in {display: inline;}
+.d-inb {display: inline-block;}
+.d-b {display: block;}
+
+.p-abs {position: absolute;}
+
+.b-0 {bottom: 0;}
+
+/* Margin */
+
+/* Padding */
+
+.p-xs {padding: 0.25em;}
+
+.p-t-xs {padding-top: 0.25em;}
+.p-t-sm {padding-top: 0.4em;}
+.p-t-m {padding-top: 0.8em;}
+
+/* Links */
+
+a:link {color: #222222;}
+
+/* visited link */
+a:visited {color: #222222;}
+
+/* mouse over link */
+a:hover {color: #222222;}
+
+/*a {text-decoration: none;}*/
+
+input:focus {outline: none;}
+
+/* Buttons */
+
+.rounded {
+  border-radius: 10px;
+  padding:5px;
+}
+
+.sm-rect-button {
+    border-radius: 10px;
+    border: 1px solid #bebebe;
+    box-shadow: 0 0 3px gray;
+    /*color: #bebebe;*/
+    background: none;
+    padding:5px;
+}
+
+/* Normalize */
+h1 {margin: 0;}
