@@ -8,11 +8,6 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root 'sessions#new'
-  get 'sfo/terminals' => 'terminals#index'
-  get 'sfo/terminals/:id' => 'terminals#view'
-
-
-
 
   get 'logout' => 'sessions#destroy'
   post 'login' => 'sessions#create'
@@ -21,6 +16,8 @@ Rails.application.routes.draw do
   # root 'connection#index'
   # resources :connection
   resources :users
+  resources :terminals
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

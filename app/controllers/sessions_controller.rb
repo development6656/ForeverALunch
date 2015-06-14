@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.where(email: params[:session][:email].downcase).first
     if @user && @user.authenticate(params[:session][:password])
       log_in @user
-      redirect_to '/sfo/terminals'
+      redirect_to '/terminals'
     else
       # Create an error message.
       @error = 'Invalid email/password combination.'
@@ -23,6 +23,6 @@ class SessionsController < ApplicationController
   def fbcreate
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
-    redirect_to '/sfo/terminals'
+    redirect_to '/terminals'
   end
 end

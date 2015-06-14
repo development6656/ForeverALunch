@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       if params[:user][:password] == params[:user][:password_confirmation]
         @user.save
         log_in(@user)
-        redirect_to '/sfo/terminals'
+        redirect_to '/terminals'
       else
         @error = "Password confirmation must match Password"
         render :new

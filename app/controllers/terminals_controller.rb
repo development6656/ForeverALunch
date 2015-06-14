@@ -1,7 +1,9 @@
 class TerminalsController < ApplicationController
 
-  def view
-    @terminal = Terminal.where(id: params[:id]).first
+  def index
+  end
+  def create
+    @terminal = Terminal.where(name: params[:terminal]).first
   end
 
   def swag
