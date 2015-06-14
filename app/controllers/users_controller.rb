@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(
       username: params[:user][:username],
       email: params[:user][:email],
-      password: params[:user][:password]
+      password: params[:user][:password],
+      profile_picture: "https://lh3.googleusercontent.com/-6OPxbzMH3IA/AAAAAAAAAAI/AAAAAAAAGPQ/3A7tdz6xYMM/photo.jpg"
       )
-    p @user
       if params[:user][:password] == params[:user][:password_confirmation]
         @user.save
         log_in(@user)
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def appoint
     p params
     appointment = Appointment.new(
-        user_id: session[:user_id],
+        user_id: current_user.id,
         business_id: params[:id],
         start_time: DateTime.parse(params[:begin_time]),
         end_time: DateTime.parse(params[:end_time])
