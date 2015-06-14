@@ -1,0 +1,14 @@
+<form action="/terminals" method="POST">
+  <p>Terminal</p>
+  <select name="terminal">
+    <option>Terminal 1</option>
+    <option>Terminal 2</option>
+    <option>Terminal 3</option>
+    <option selected>International Terminal</option>
+  </select>
+  <p>Start Time</p>
+  <input type="time" name="start_time" value="08:00:00" min="disabled"/>
+  <p>End Time</p>
+  <input type="time" name="end_time" value="12:00:00" step="6000"/>
+  <input type="submit">
+</form>
