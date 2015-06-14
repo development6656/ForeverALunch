@@ -13,10 +13,10 @@ $(document).ready(function(){
         $('.biz'+response[i].id).append('<p class="f-futura fz-xs m-b-0">' + response[i].name + '</p>')
         $('.biz'+response[i].id).append('<p class="m-t-0">' + response[i].description + '</p>')
         $('.biz'+response[i].id).append("<img class='restaurant' src=" +response[i].image + '>')
-        for(var j=0; j<response[i].other_users.length; j++){
-          $('.biz'+response[i].id).append("<img class='other_user' src=" +response[i].other_users[j] + '>')
-        }
        $('.biz'+response[i].id).append("<form class='addevent' method='POST' action=" +"/users/appointment/"+response[i].id+ "><input type='time' name='begin_time' value='08:00:00'></input><input type='time' name='end_time' value='12:00:00'></input><input type='submit' id=" + response[i].id + " value='JOIN'></input></form>")
+        for(var j=0; j<response[i].other_users.length; j++){
+          $('.biz'+response[i].id).append("<img class='w-50 other_user' src=" +response[i].other_users[j] + '>')
+        }
           }
         $('#terminal-form').css("display", "none")
       })
@@ -31,8 +31,8 @@ $(document).ready(function(){
       data: $(this).serialize(),
       dataType: 'JSON'
     }).done(function(response){
-      debugger
-      current.append("<img class='other_user' src=" +response.profile_picture + '>')
+
+      current.append("<img class='w-50 other_user' src=" +response.profile_picture + '>')
     })
 
 
@@ -48,6 +48,7 @@ $(document).ready(function(){
           chat.setUser(authData.uid, authData[authData.provider].displayName);
         }
       });
+      // debugger
       function login(provider) {
         chatRef.authWithOAuthPopup(provider, function(error, authData) {
           if (error) {
