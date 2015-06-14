@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+
+  $('.form_submit').on("submit", function(){
+      event.preventDefault();
+      $.ajax({
+        url: $(this).attr('action'),
+        type: 'POST',
+        data: $(this).serialize(),
+        dataType: 'JSON'
+      }).done(function(response){
+        debugger
+        for(var i = 0; i<response.length; i++){
+          console.log(response[i].name + response[i].image + response[i].description)
+          }
+      })
+  })
+
+})

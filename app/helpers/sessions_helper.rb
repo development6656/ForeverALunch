@@ -15,4 +15,9 @@ module SessionsHelper
     session[:user_id] = nil
     @current_user = nil
   end
+
+  def convert_time(time)
+    (time.hour * 60) + time.min
+  end
+
 end
