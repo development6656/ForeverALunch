@@ -37,8 +37,6 @@
 //        $('.klay').append("<form class='addevent' method='POST' action=" +"/users/appointment/"+response[i].id+ "><input type='time' name='begin_time' value='08:00:00'></input><input type='time' name='end_time' value='12:00:00'></input><input type='submit' id=" + response[i].id + " value='pick dis'></input></form>")
 //           }
 
-//       })
-//   })
 
 //   $('.lebron').on("submit",'.addevent', function(){
 //     event.preventDefault();

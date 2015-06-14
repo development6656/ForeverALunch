@@ -38,5 +38,25 @@ $(document).ready(function(){
 
   })
 
+//FIREBASE
+// Create a new Firebase reference, and a new instance of the Login client
+      var chatRef = new Firebase('https://radiant-inferno-7960.firebaseio.com/chat');
+      chatRef.onAuth(function(authData) {
+        // Once authenticated, instantiate Firechat with our user id and user name
+        if (authData) {
+          var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
+          chat.setUser(authData.uid, authData[authData.provider].displayName);
+        }
+      });
+      function login(provider) {
+        chatRef.authWithOAuthPopup(provider, function(error, authData) {
+          if (error) {
+            console.log(error);
+          }
+        });
+      }
+//FIREBASE END
+
+
 
 })
