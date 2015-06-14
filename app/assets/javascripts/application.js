@@ -26,8 +26,14 @@ $(document).ready(function(){
       }).done(function(response){
         debugger
         for(var i = 0; i<response.length; i++){
+
+
           console.log(response[i].name + response[i].image + response[i].description)
+         $('.klay').append('<p>' + response[i].name + '</p>')
+         $('.klay').append('<p>' + response[i].description + '</p>')
+         $('.klay').append("<img class='dicksize' src=" +response[i].image + '>')
           }
+
       })
   })
 
