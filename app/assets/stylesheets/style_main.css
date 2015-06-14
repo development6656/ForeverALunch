@@ -4,7 +4,10 @@
 .w-full {width: 100%;}
 
 .w-68 {width: 68px;}
+.w-200 {width: 200px;}
 .w-220 {width: 220px;}
+
+.w-13 {width: 13em;}
 
 .m-w-500 {max-width: 500px;}
 
@@ -23,10 +26,13 @@
 /* Fonts */
 
 .fz-xs {font-size: 1.15em;}
+.fz-sm {font-size: 1.5em;}
 
 .f-oswald {font-family: 'Oswald', sans-serif;}
 .f-oldstd {font-family: 'Old Standard TT', serif;}
 .f-futura {font-family: Futura, 'Trebuchet MS', Arial, sans-serif}
+
+.fw-bold {font-weight: bold;}
 /* Borders */
 
 /* Positioning */
@@ -50,6 +56,12 @@
 .b-0 {bottom: 0;}
 
 /* Margin */
+
+.m-b-xs {margin-bottom: .25em;}
+.m-b-sm {margin-bottom: .5em;}
+
+.m-t-sm {margin-top: .5em;}
+.m-t-m {margin-top: 1em;}
 
 /* Padding */
 
@@ -88,6 +100,10 @@ input:focus {outline: none;}
     background: none;
     padding:5px;
 }
+
+/*#drop-down select {
+  font-size: 2em !important;
+}*/
 
 /* Normalize */
 h1 {margin: 0;}
