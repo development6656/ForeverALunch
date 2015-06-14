@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   # root 'connection#index'
   # resources :connection
-  resource :users
+  resources :users
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
