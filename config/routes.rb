@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # root 'welcome#index'
 
-  # root 'connection#index'
+  root 'connection#index'
   # resources :connection
 
   # Example of regular route:
