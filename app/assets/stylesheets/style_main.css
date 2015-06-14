@@ -3,12 +3,15 @@
 .w-90 {width: 90%;}
 .w-full {width: 100%;}
 
+.w-50 {width: 50px;}
 .w-68 {width: 68px;}
 .w-200 {width: 200px;}
 .w-220 {width: 220px;}
 
+
 .w-13 {width: 13em;}
 
+.m-w-400 {max-width: 400px}
 .m-w-500 {max-width: 500px;}
 
 /* Height */
@@ -42,6 +45,8 @@
 .t-left {text-align: left;}
 
 .center {margin: 0 auto;}
+.right {float: right;}
+.left {float: left;}
 
 .v-top {vertical-align: top;}
 .v-bottom {vertical-align: bottom;}
@@ -52,8 +57,24 @@
 .d-b {display: block;}
 
 .p-abs {position: absolute;}
+.r-0 {right: 0;}
+.t-0 {top: 0;}
 
 .b-0 {bottom: 0;}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
 
 /* Margin */
 
@@ -68,6 +89,7 @@
 /* Padding */
 
 .p-xs {padding: 0.25em;}
+.p-sm {padding: 0.5em;}
 
 .p-t-xs {padding-top: 0.25em;}
 .p-t-sm {padding-top: 0.4em;}
@@ -82,6 +104,8 @@ a:visited {color: #222222;}
 
 /* mouse over link */
 a:hover {color: #222222;}
+
+.t-none:link {text-decoration: none}
 
 /*a {text-decoration: none;}*/
 
@@ -120,5 +144,6 @@ h1 {margin: 0;}
 
 .klay {
   width: 95%;
+  max-width: 400px;
   text-align: center;
 }
