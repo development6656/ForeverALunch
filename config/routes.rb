@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # resources :connection
   resources :users
   resources :terminals
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
