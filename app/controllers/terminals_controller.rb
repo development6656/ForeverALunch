@@ -3,6 +3,9 @@ class TerminalsController < ApplicationController
   def index
   end
 
+  def show
+  end
+
   def create
     @terminal = Terminal.where(name: params[:terminal]).first
     # @businesses = Business.where(terminal_id: params[:terminal])
@@ -15,8 +18,7 @@ class TerminalsController < ApplicationController
 
       # @businesses = @terminal.businesses.where(start_time < params[:start_time])
       @businesses.each do |x|
-        puts "*" * 80
-        # puts x.name if convert_time(x.start_time) < convert_time(DateTime.parse(params[:start_time])) && convert_time(x.end_time) > convert_time(DateTime.parse(params[:end_time]))
+
         puts "*" * 80
         if convert_time(x.start_time) < convert_time(DateTime.parse(params[:start_time])) && convert_time(x.end_time) > convert_time(DateTime.parse(params[:end_time]))
           @business_obj <<

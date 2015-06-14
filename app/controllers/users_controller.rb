@@ -26,7 +26,8 @@ class UsersController < ApplicationController
         user_id: session[:user_id],
         business_id: params[:id],
         start_time: DateTime.parse(params[:begin_time]),
-        end_time: DateTime.parse(params[:end_time])
+        end_time: DateTime.parse(params[:end_time]),
+        attending: true
       )
     appointment.save!
 
