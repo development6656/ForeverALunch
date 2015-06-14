@@ -18,7 +18,19 @@ class UsersController < ApplicationController
         @error = "Password confirmation must match Password"
         render :new
       end
+  end
 
+  def appoint
+    p params
+    appointment = Appointment.new(
+        user_id: session[:user_id],
+        business_id: params[:id],
+        start_time: DateTime.parse(params[:begin_time]),
+        end_time: DateTime.parse(params[:end_time])
+      )
+    appointment.save!
+
+    render json: appointment.to_json
   end
 end
 
