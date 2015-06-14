@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :users
   resources :terminals
 
+  post 'users/appointment/:id' => 'users#appoint'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
