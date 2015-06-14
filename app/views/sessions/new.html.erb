@@ -1,0 +1,24 @@
+<div class="total-page-container">
+  <div>
+    <h1 class='t-center f-oldstd'>LOG IN</h1>
+    <% if @error %>
+      <%= @error %>
+    <% end %>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <div class="w-90 center">
+        <div class='d-b p-t-sm'><%= f.label :email, class: "f-oswald fz-xs f-weight"%></div>
+        <div class='d-b'><%= f.email_field :email, :class => 'rounded w-full' %></div>
+
+        <div class='d-b p-t-sm'><%= f.label :password, class: "f-oswald fz-xs f-weight" %></div>
+        <div class='d-b'><%= f.password_field :password, :class => 'rounded w-full' %></div>
+      <div class='p-t-sm t-center'>
+      <%= f.submit "LOG IN", class: "f-oswald sm-rect-button-map" %>
+      </div>
+    <% end %>
+
+    <%= link_to "#{image_tag('facebook-login-button.png', class: "w-220")}".html_safe, "/auth/Facebook", id: "fb-log-in", :class => 'p-t-m d-b t-center' %>
+    <div>
+      <a href='/users/new' class="t-left w-60 h-68">Sign Up as New User</a>
+    </div>
+  </div>
+</div>

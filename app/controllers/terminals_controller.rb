@@ -1,7 +1,11 @@
-class ConnectionController < ApplicationController
+class TerminalsController < ApplicationController
 
-  def index
-    @biz = Business.all
+  def view
+    @terminal = Terminal.where(id: params[:id]).first
+  end
+
+  def swag
+  @biz = Business.all
     @abv = Time.now
     @abv = @abv.to_s.scan(/..:..:../)
     p Time.now
@@ -16,4 +20,5 @@ class ConnectionController < ApplicationController
     # p @biz[3]
     # @abv = @abv[0]
   end
+
 end

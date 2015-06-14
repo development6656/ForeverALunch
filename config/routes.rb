@@ -7,9 +7,20 @@ Rails.application.routes.draw do
 
   # root 'welcome#index'
 
-  root 'connection#index'
-  # resources :connection
+  root 'sessions#new'
+  get 'sfo/terminals' => 'terminals#index'
+  get 'sfo/terminals/:id' => 'terminals#view'
 
+
+
+
+  get 'logout' => 'sessions#destroy'
+  post 'login' => 'sessions#create'
+  get 'auth/:provider/callback' => 'sessions#fbcreate'
+  get 'auth/failure', to: redirect('/')
+  # root 'connection#index'
+  # resources :connection
+  resource :users
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
