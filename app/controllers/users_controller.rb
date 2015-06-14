@@ -30,8 +30,8 @@ class UsersController < ApplicationController
         attending: true
       )
     appointment.save!
-
-    render json: appointment.to_json
+    p user = current_user
+    render json: current_user.to_json
   end
 end
 
